@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion'
+import FloatingDecor from './FloatingDecor'
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Ambient blobs */}
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-300/40 rounded-full blur-3xl" />
       <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-lime-300/40 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      {/* Floating decorations */}
+      <FloatingDecor className="absolute inset-0" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -61,6 +66,9 @@ export default function Hero() {
               <div className="rounded-lg bg-emerald-50 border border-emerald-100" />
             </div>
           </div>
+
+          {/* Floating decor localized to the card area */}
+          <FloatingDecor className="absolute inset-0" />
         </motion.div>
       </div>
     </section>
